@@ -15,6 +15,8 @@ struct WeatherData {
     let humidity: Int
     let cloudness: Int
     let windSpeed: Double
+    let precipitation: Double
+    let dailyChanceOfRain: Int
     let condition: WeatherCondition
     
     enum WeatherCondition: String {
@@ -40,6 +42,8 @@ extension WeatherData {
                      humidity: weather.current.humidity,
                      cloudness: weather.current.cloud,
                      windSpeed: weather.current.windMPH,
+                     precipitation: weather.current.precipMM,
+                     dailyChanceOfRain: weather.forecast.forecastday[0].day.dailyChanceOfRain,
                      condition: .init(rawValue: weather.current.condition.text) ?? .sunny)
     }
 }
