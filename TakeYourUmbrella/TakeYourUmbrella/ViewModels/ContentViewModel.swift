@@ -10,18 +10,15 @@ import Combine
 
 class ContentViewModel: ObservableObject {
     
-    @Published var weather: Weather?
+    @Published var weather: WeatherData? = nil
     private let weatherService = WeatherService()
-    
-    
-    init() {
-        //$weatherService
-    }
     
     @MainActor func onAppear()  {
         Task {
-            let weather = try? await weatherService.fetch(for: "Moscow")
-            self.weather = weather
+            let weather = try? await weatherService.fetch(for: "Sydney")
+            if weather != nil {
+                self.weather = WeatherData(weather: weather!)
+            }
         }
     }
 }

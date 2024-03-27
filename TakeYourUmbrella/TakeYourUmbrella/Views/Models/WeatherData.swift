@@ -15,7 +15,7 @@ struct WeatherData {
     let humidity: Int
     let cloudness: Int
     let windSpeed: Double
-    let precipitation: Double
+    let precipitation: Int
     let dailyChanceOfRain: Int
     let condition: WeatherCondition
     
@@ -23,12 +23,22 @@ struct WeatherData {
         case sunny = "Sunny"
         case partlyCloudy = "Partly Cloudy"
         case cloudy = "Cloudy"
+        case mist = "Mist"
+        case patchyRainPossible = "Patchy rain possible"
+        case patchySnowPossible = "Patchy snow possible"
+        case patchySleetPossible = "Patchy sleet possible"
+        case heavyRain = "Heavy rain"
         
-        var image: Image {
+        var image: String {
             switch self {
-            case .sunny: return Image("sun")
-            case .partlyCloudy: return Image("sun")
-            case .cloudy: return Image("sun")
+            case .sunny: return "sun"
+            case .partlyCloudy: return "partlyCloudy"
+            case .cloudy: return "cloudy"
+            case .mist: return "mist"
+            case .patchyRainPossible: return "patchyRainPossible"
+            case .patchySnowPossible: return "patchySnowPossible"
+            case .patchySleetPossible: return "patchySleetPossible"
+            case .heavyRain : return "heavyRain"
             }
         }
     }
@@ -42,7 +52,7 @@ extension WeatherData {
                      humidity: weather.current.humidity,
                      cloudness: weather.current.cloud,
                      windSpeed: weather.current.windMPH,
-                     precipitation: weather.current.precipMM,
+                     precipitation: Int(weather.current.precipMM),
                      dailyChanceOfRain: weather.forecast.forecastday[0].day.dailyChanceOfRain,
                      condition: .init(rawValue: weather.current.condition.text) ?? .sunny)
     }

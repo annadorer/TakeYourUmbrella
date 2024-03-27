@@ -18,7 +18,6 @@ struct GifImageView: UIViewRepresentable {
     
     func makeUIView(context: Context) -> WKWebView {
         let webView = WKWebView()
-        //webView.backgroundColor = .clear
         let url = Bundle.main.url(forResource: gifName, withExtension: "gif")!
         let data = try! Data(contentsOf: url)
         
@@ -26,7 +25,6 @@ struct GifImageView: UIViewRepresentable {
                      mimeType: "image/gif",
                      characterEncodingName: "UTF-8",
                      baseURL: url.deletingLastPathComponent())
-        
         return webView
     }
     

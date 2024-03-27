@@ -22,8 +22,11 @@
 		954454532B9EDED9004B3CB1 /* TakeYourUmbrellaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954454522B9EDED9004B3CB1 /* TakeYourUmbrellaTests.swift */; };
 		9544545D2B9EDED9004B3CB1 /* TakeYourUmbrellaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9544545C2B9EDED9004B3CB1 /* TakeYourUmbrellaUITests.swift */; };
 		9544545F2B9EDED9004B3CB1 /* TakeYourUmbrellaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9544545E2B9EDED9004B3CB1 /* TakeYourUmbrellaUITestsLaunchTests.swift */; };
+		95AE7FE42BB2D5C500093D50 /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AE7FE32BB2D5C500093D50 /* LocationSearchView.swift */; };
+		95B727B02BB4328500A88530 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B727AF2BB4328500A88530 /* LocationService.swift */; };
+		95B727B92BB45DAD00A88530 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B727B82BB45DAD00A88530 /* NotificationService.swift */; };
+		95B727BD2BB45DAD00A88530 /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 95B727B62BB45DAD00A88530 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		95CD075C2BB1985B00658BE4 /* GifImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD075B2BB1985B00658BE4 /* GifImageView.swift */; };
-		95CD075E2BB19CCE00658BE4 /* water.gif in Resources */ = {isa = PBXBuildFile; fileRef = 95CD075D2BB19CCE00658BE4 /* water.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +44,28 @@
 			remoteGlobalIDString = 9544543D2B9EDED7004B3CB1;
 			remoteInfo = TakeYourUmbrella;
 		};
+		95B727BB2BB45DAD00A88530 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 954454362B9EDED7004B3CB1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 95B727B52BB45DAD00A88530;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		95B727C12BB45DAD00A88530 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				95B727BD2BB45DAD00A88530 /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9506C8AA2BAACAF600A2DB3B /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
@@ -63,8 +87,13 @@
 		954454582B9EDED9004B3CB1 /* TakeYourUmbrellaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TakeYourUmbrellaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9544545C2B9EDED9004B3CB1 /* TakeYourUmbrellaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeYourUmbrellaUITests.swift; sourceTree = "<group>"; };
 		9544545E2B9EDED9004B3CB1 /* TakeYourUmbrellaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeYourUmbrellaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		95AE7FE32BB2D5C500093D50 /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
+		95B727AF2BB4328500A88530 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		95B727B12BB45D6C00A88530 /* TakeYourUmbrella.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TakeYourUmbrella.entitlements; sourceTree = "<group>"; };
+		95B727B62BB45DAD00A88530 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		95B727B82BB45DAD00A88530 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		95B727BA2BB45DAD00A88530 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95CD075B2BB1985B00658BE4 /* GifImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImageView.swift; sourceTree = "<group>"; };
-		95CD075D2BB19CCE00658BE4 /* water.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = water.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +112,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		954454552B9EDED9004B3CB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95B727B32BB45DAD00A88530 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -117,6 +153,7 @@
 				954454402B9EDED7004B3CB1 /* TakeYourUmbrella */,
 				954454512B9EDED9004B3CB1 /* TakeYourUmbrellaTests */,
 				9544545B2B9EDED9004B3CB1 /* TakeYourUmbrellaUITests */,
+				95B727B72BB45DAD00A88530 /* OneSignalNotificationServiceExtension */,
 				9544543F2B9EDED7004B3CB1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -127,6 +164,7 @@
 				9544543E2B9EDED7004B3CB1 /* TakeYourUmbrella.app */,
 				9544544E2B9EDED9004B3CB1 /* TakeYourUmbrellaTests.xctest */,
 				954454582B9EDED9004B3CB1 /* TakeYourUmbrellaUITests.xctest */,
+				95B727B62BB45DAD00A88530 /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,6 +172,7 @@
 		954454402B9EDED7004B3CB1 /* TakeYourUmbrella */ = {
 			isa = PBXGroup;
 			children = (
+				95B727B12BB45D6C00A88530 /* TakeYourUmbrella.entitlements */,
 				9510DB0D2BAC8140006930F8 /* Info.plist */,
 				9510DB042BAC7E1A006930F8 /* Fonts */,
 				954454412B9EDED7004B3CB1 /* TakeYourUmbrellaApp.swift */,
@@ -141,9 +180,9 @@
 				9544546C2B9EDF54004B3CB1 /* Views */,
 				9544546B2B9EDF2D004B3CB1 /* Models */,
 				954454452B9EDED9004B3CB1 /* Assets.xcassets */,
-				95CD075D2BB19CCE00658BE4 /* water.gif */,
 				954454472B9EDED9004B3CB1 /* Preview Content */,
 				9506C8AC2BAAD48B00A2DB3B /* WeatherService.swift */,
+				95B727AF2BB4328500A88530 /* LocationService.swift */,
 			);
 			path = TakeYourUmbrella;
 			sourceTree = "<group>";
@@ -187,6 +226,7 @@
 				951C59692BAC0D960085954E /* Models */,
 				954454432B9EDED7004B3CB1 /* ContentView.swift */,
 				95CD075B2BB1985B00658BE4 /* GifImageView.swift */,
+				95AE7FE32BB2D5C500093D50 /* LocationSearchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,6 +239,15 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		95B727B72BB45DAD00A88530 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				95B727B82BB45DAD00A88530 /* NotificationService.swift */,
+				95B727BA2BB45DAD00A88530 /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -209,10 +258,12 @@
 				9544543A2B9EDED7004B3CB1 /* Sources */,
 				9544543B2B9EDED7004B3CB1 /* Frameworks */,
 				9544543C2B9EDED7004B3CB1 /* Resources */,
+				95B727C12BB45DAD00A88530 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				95B727BC2BB45DAD00A88530 /* PBXTargetDependency */,
 			);
 			name = TakeYourUmbrella;
 			productName = TakeYourUmbrella;
@@ -255,6 +306,23 @@
 			productReference = 954454582B9EDED9004B3CB1 /* TakeYourUmbrellaUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		95B727B52BB45DAD00A88530 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95B727BE2BB45DAD00A88530 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				95B727B22BB45DAD00A88530 /* Sources */,
+				95B727B32BB45DAD00A88530 /* Frameworks */,
+				95B727B42BB45DAD00A88530 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneSignalNotificationServiceExtension;
+			productName = OneSignalNotificationServiceExtension;
+			productReference = 95B727B62BB45DAD00A88530 /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -276,6 +344,9 @@
 						CreatedOnToolsVersion = 14.0.1;
 						TestTargetID = 9544543D2B9EDED7004B3CB1;
 					};
+					95B727B52BB45DAD00A88530 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
 				};
 			};
 			buildConfigurationList = 954454392B9EDED7004B3CB1 /* Build configuration list for PBXProject "TakeYourUmbrella" */;
@@ -294,6 +365,7 @@
 				9544543D2B9EDED7004B3CB1 /* TakeYourUmbrella */,
 				9544544D2B9EDED9004B3CB1 /* TakeYourUmbrellaTests */,
 				954454572B9EDED9004B3CB1 /* TakeYourUmbrellaUITests */,
+				95B727B52BB45DAD00A88530 /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -304,7 +376,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9510DB092BAC7E47006930F8 /* PalanquinDark-Bold.ttf in Resources */,
-				95CD075E2BB19CCE00658BE4 /* water.gif in Resources */,
 				9510DB0C2BAC7E48006930F8 /* PalanquinDark-Regular.ttf in Resources */,
 				9510DB0A2BAC7E47006930F8 /* PalanquinDark-SemiBold.ttf in Resources */,
 				954454492B9EDED9004B3CB1 /* Preview Assets.xcassets in Resources */,
@@ -327,6 +398,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		95B727B42BB45DAD00A88530 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -339,7 +417,9 @@
 				951C596D2BAC2E470085954E /* ContentViewModel.swift in Sources */,
 				9506C8AB2BAACAF600A2DB3B /* Weather.swift in Sources */,
 				95CD075C2BB1985B00658BE4 /* GifImageView.swift in Sources */,
+				95AE7FE42BB2D5C500093D50 /* LocationSearchView.swift in Sources */,
 				954454422B9EDED7004B3CB1 /* TakeYourUmbrellaApp.swift in Sources */,
+				95B727B02BB4328500A88530 /* LocationService.swift in Sources */,
 				951C596B2BAC0DAC0085954E /* WeatherData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,6 +441,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		95B727B22BB45DAD00A88530 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95B727B92BB45DAD00A88530 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -373,6 +461,11 @@
 			isa = PBXTargetDependency;
 			target = 9544543D2B9EDED7004B3CB1 /* TakeYourUmbrella */;
 			targetProxy = 954454592B9EDED9004B3CB1 /* PBXContainerItemProxy */;
+		};
+		95B727BC2BB45DAD00A88530 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 95B727B52BB45DAD00A88530 /* OneSignalNotificationServiceExtension */;
+			targetProxy = 95B727BB2BB45DAD00A88530 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -494,8 +587,10 @@
 		954454632B9EDED9004B3CB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TakeYourUmbrella/TakeYourUmbrella.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TakeYourUmbrella/Preview Content\"";
@@ -524,8 +619,10 @@
 		954454642B9EDED9004B3CB1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TakeYourUmbrella/TakeYourUmbrella.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TakeYourUmbrella/Preview Content\"";
@@ -623,6 +720,54 @@
 			};
 			name = Release;
 		};
+		95B727BF2BB45DAD00A88530 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TakeYourUmbrella.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		95B727C02BB45DAD00A88530 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TakeYourUmbrella.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -658,6 +803,15 @@
 			buildConfigurations = (
 				954454692B9EDED9004B3CB1 /* Debug */,
 				9544546A2B9EDED9004B3CB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95B727BE2BB45DAD00A88530 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95B727BF2BB45DAD00A88530 /* Debug */,
+				95B727C02BB45DAD00A88530 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -6,72 +6,93 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct ContentView: View {
     
     @StateObject var viewModel = ContentViewModel()
+    @State var showingLocationSearchView = false
     
-    let currentDate = Date()
-    let dateFormatter = DateFormatter()
+    private let currentDate = Date()
+    private let dateFormatter = DateFormatter()
     
     var body: some View {
         VStack {
             HStack {
                 Button(action: {
-                    print("button tapped")
-                }) {
+                    requestNotificationAuthorization()}) {
                     imageView(imageName: "notification", width: 50, height: 50, color: "Button", cornerRadius: 30)
                 }
                 Spacer()
                 VStack(alignment: .trailing, spacing: -10) {
                     textView(text: "\(dateFormatter.string(from: currentDate))", size: 21)
-                    textView(text: "\(viewModel.weather?.location.name ?? "" ), \(viewModel.weather?.location.country ?? "")", size: 24.5)
+                    textView(text: "\(viewModel.weather?.city ?? ""), \(viewModel.weather?.country ?? "")", size: 22)
+                        .lineLimit(1)
                 }
             }
-            HStack(){
-                imageView(imageName: "rain", width: 180, height: 180, color: "Form", cornerRadius: 110)
-                Spacer()
+            
+            HStack(alignment: .center, spacing: 25) {
+                imageView(imageName: "\(viewModel.weather?.condition.image ?? "default")", width: 180, height: 180, color: "Form", cornerRadius: 110)
+                    .shadow(radius: 15)
                 VStack(alignment: .center, spacing: -30) {
-                    textView(text: "\(viewModel.weather?.current.tempC ?? 0)°C", size: 75)
-                    textView(text: "\(viewModel.weather?.current.condition.text ?? "")", size: 28)
+                    textView(text: "\(viewModel.weather?.temperature ?? 0)°C", size: 75)
+                    textView(text: "\(viewModel.weather?.condition ?? WeatherData.WeatherCondition.sunny)", size: 28)
                 }
             }
+            .padding(.top, -10)
             HStack {
                 Spacer()
-                combineTexts(text1: "Wind", text2: "\(viewModel.weather?.current.windMPH ?? 0) mp/h")
+                combineTexts(text1: "Wind", text2: "\(viewModel.weather?.windSpeed ?? 0) mp/h")
                 Divider()
                     .overlay(.black)
                     .frame(width: 15, height: 50)
-                combineTexts(text1: "Humidity", text2: "\(viewModel.weather?.current.humidity ?? 0)%")
+                combineTexts(text1: "Humidity", text2: "\(viewModel.weather?.humidity ?? 0)%")
                 Divider()
                     .overlay(.black)
                     .frame(width: 15, height: 50)
-                combineTexts(text1: "Cloud", text2: "\(viewModel.weather?.current.cloud ?? 0)%")
+                combineTexts(text1: "Cloud", text2: "\(viewModel.weather?.cloudness ?? 0)%")
                 Spacer()
             }
             .background(Color("Form"))
+            .overlay(RoundedRectangle(cornerRadius: 50)
+                .stroke(Color("ButtonCircle"), lineWidth: 7))
             .cornerRadius(50)
-            Spacer()
-            HStack() {
-                Text("Precipitation amount \(viewModel.weather?.current.precipMM ?? 0)")
+            .shadow(radius: 15)
+            HStack {
+                Text("Precipitation amount: \(viewModel.weather?.precipitation ?? 0)")
                     .font(.custom("PalanquinDark-Regular", size: 22))
             }
-            HStack() {
-                //GifImageView(gifName: "water")
-                combineTexts(text1: "Chance of rain", text2: "\(viewModel.weather?.forecast.forecastday[0].day.dailyChanceOfRain ?? 0)%")
-            }
+            HStack {
+                VStack(alignment: .leading, spacing: 0) {
+                    combineTexts(text1: "Chance of rain", text2: "\(viewModel.weather?.dailyChanceOfRain ?? 0)%")
+                }
+                .padding(.all, 10)
+                Image("umbrella")
+                    .resizable()
+                    .scaledToFit()
+                    .scaleEffect(1)
+                    .padding(.all,9)
+            } .frame(width: 360, height: 100)
+                .overlay(RoundedRectangle(cornerRadius: 50)
+                    .stroke(Color("ButtonCircle"), lineWidth: 7))
+                .background(Color("Form"))
+                .cornerRadius(50)
+                .shadow(radius: 15)
+            Spacer()
             HStack {
                 Rectangle()
                     .frame(height: 2.5)
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("Text"))
                 Button(action: {
-                    print("button tapped")
+                    self.showingLocationSearchView.toggle()
                 }) {
                     imageView(imageName: "location", width: 58, height: 58, color: "Button", cornerRadius: 30)
+                } .sheet(isPresented: $showingLocationSearchView) {
+                    LocationSearchView()
                 }
                 Rectangle()
                     .frame(height: 2.5)
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("Text"))
             }
         }
         .padding(.all)
@@ -83,6 +104,48 @@ struct ContentView: View {
     
     init() {
         dateFormatter.dateFormat = "EEEE, d MMMM"
+    }
+    
+    func requestNotificationAuthorization() {
+            let center = UNUserNotificationCenter.current()
+            
+            center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+                if let error = error {
+                    print("Ошибка при запросе разрешения на уведомления: \(error.localizedDescription)")
+                } else if granted {
+                    print("Разрешение на уведомления получено")
+                    scheduleRainNotification()
+                } else {
+                    print("Пользователь отказал в разрешении на уведомления")
+                }
+            }
+        }
+    
+    func scheduleRainNotification() {
+        
+        let center = UNUserNotificationCenter.current()
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Возьмите зонтик!"
+        content.body = "Ожидаются осадки. Не забудьте взять зонтик с собой."
+        
+        // Проверка количества осадков (здесь просто для примера)
+        let isRaining = (viewModel.weather?.dailyChanceOfRain ?? 0) >= 40
+        
+        if isRaining {
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false) // Уведомление через 5 секунд
+            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+            
+            center.add(request) { error in
+                if let error = error {
+                    print("Ошибка при добавлении уведомления: \(error.localizedDescription)")
+                } else {
+                    print("Уведомление успешно добавлено")
+                }
+            }
+        } else {
+            print("Сейчас не ожидаются осадки")
+        }
     }
 }
 
