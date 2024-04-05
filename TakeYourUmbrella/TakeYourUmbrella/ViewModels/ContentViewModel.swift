@@ -6,12 +6,13 @@
 //
 
 import Foundation
-import Combine
+import UserNotifications
 
 class ContentViewModel: ObservableObject {
     
     @Published var weather: WeatherData? = nil
     private let weatherService = WeatherService()
+    let notifications: Notifications = Notifications()
     
     @MainActor func onAppear()  {
         Task {

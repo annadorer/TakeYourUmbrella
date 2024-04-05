@@ -8,7 +8,7 @@
 import SwiftUI
 import UserNotifications
 
-struct ContentView: View {
+struct WeatherView: View {
     
     @StateObject var viewModel = ContentViewModel()
     @State var showingLocationSearchView = false
@@ -20,9 +20,12 @@ struct ContentView: View {
         VStack {
             HStack {
                 Button(action: {
-                    requestNotificationAuthorization()}) {
-                    imageView(imageName: "notification", width: 50, height: 50, color: "Button", cornerRadius: 30)
-                }
+                    viewModel.notifications.requestNotificationAuthorization(dailyChanceOfRain: viewModel.weather?.dailyChanceOfRain ?? 0)
+                    viewModel.notifications.scheduleRainNotification(dailyChanceOfRain: viewModel.weather?.dailyChanceOfRain ?? 0)
+                    
+                }) {
+                        imageView(imageName: "notification", width: 50, height: 50, color: "Button", cornerRadius: 30)
+                    }
                 Spacer()
                 VStack(alignment: .trailing, spacing: -10) {
                     textView(text: "\(dateFormatter.string(from: currentDate))", size: 21)
@@ -106,76 +109,33 @@ struct ContentView: View {
         dateFormatter.dateFormat = "EEEE, d MMMM"
     }
     
-    func requestNotificationAuthorization() {
-            let center = UNUserNotificationCenter.current()
-            
-            center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
-                if let error = error {
-                    print("Ошибка при запросе разрешения на уведомления: \(error.localizedDescription)")
-                } else if granted {
-                    print("Разрешение на уведомления получено")
-                    scheduleRainNotification()
-                } else {
-                    print("Пользователь отказал в разрешении на уведомления")
-                }
-            }
+    func combineTexts(text1: String, text2: String) -> some View {
+        return VStack {
+            Text(text1)
+                .font(.custom("PalanquinDark-Regular", size: 22))
+            Text(text2)
+                .font(.custom("PalanquinDark-Regular", size: 20))
         }
+    }
     
-    func scheduleRainNotification() {
-        
-        let center = UNUserNotificationCenter.current()
-        
-        let content = UNMutableNotificationContent()
-        content.title = "Возьмите зонтик!"
-        content.body = "Ожидаются осадки. Не забудьте взять зонтик с собой."
-        
-        // Проверка количества осадков (здесь просто для примера)
-        let isRaining = (viewModel.weather?.dailyChanceOfRain ?? 0) >= 40
-        
-        if isRaining {
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false) // Уведомление через 5 секунд
-            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-            
-            center.add(request) { error in
-                if let error = error {
-                    print("Ошибка при добавлении уведомления: \(error.localizedDescription)")
-                } else {
-                    print("Уведомление успешно добавлено")
-                }
-            }
-        } else {
-            print("Сейчас не ожидаются осадки")
-        }
+    func textView(text: String, size: Double) -> Text {
+        return Text(text)
+            .font(.custom("PalanquinDark-Regular", size: size))
+            .foregroundColor(Color("Text"))
+    }
+    
+    func imageView(imageName: String, width: Double, height: Double, color: String, cornerRadius: Double) -> some View {
+        return Image(imageName)
+            .resizable()
+            .frame(width: width, height: height)
+            .background(Color(color))
+            .overlay(RoundedRectangle(cornerRadius: cornerRadius)
+                .stroke(Color("ButtonCircle"), lineWidth: 7))
+            .cornerRadius(cornerRadius)
     }
 }
-
-func combineTexts(text1: String, text2: String) -> some View {
-    return VStack {
-        Text(text1)
-            .font(.custom("PalanquinDark-Regular", size: 22))
-        Text(text2)
-            .font(.custom("PalanquinDark-Regular", size: 20))
-    }
-}
-
-func textView(text: String, size: Double) -> Text {
-    return Text(text)
-        .font(.custom("PalanquinDark-Regular", size: size))
-        .foregroundColor(Color("Text"))
-}
-
-func imageView(imageName: String, width: Double, height: Double, color: String, cornerRadius: Double) -> some View {
-    return Image(imageName)
-        .resizable()
-        .frame(width: width, height: height)
-        .background(Color(color))
-        .overlay(RoundedRectangle(cornerRadius: cornerRadius)
-            .stroke(Color("ButtonCircle"), lineWidth: 7))
-        .cornerRadius(cornerRadius)
-}
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        WeatherView()
     }
 }

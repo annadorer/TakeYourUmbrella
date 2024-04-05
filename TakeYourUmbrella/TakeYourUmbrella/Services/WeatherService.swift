@@ -17,5 +17,4 @@ struct WeatherService {
         let weather = try JSONDecoder().decode(Weather.self, from: response.0)
         return weather
     }
-    
 }

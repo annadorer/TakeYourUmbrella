@@ -16,7 +16,7 @@
 		951C596B2BAC0DAC0085954E /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951C596A2BAC0DAC0085954E /* WeatherData.swift */; };
 		951C596D2BAC2E470085954E /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951C596C2BAC2E470085954E /* ContentViewModel.swift */; };
 		954454422B9EDED7004B3CB1 /* TakeYourUmbrellaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954454412B9EDED7004B3CB1 /* TakeYourUmbrellaApp.swift */; };
-		954454442B9EDED7004B3CB1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954454432B9EDED7004B3CB1 /* ContentView.swift */; };
+		954454442B9EDED7004B3CB1 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954454432B9EDED7004B3CB1 /* WeatherView.swift */; };
 		954454462B9EDED9004B3CB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954454452B9EDED9004B3CB1 /* Assets.xcassets */; };
 		954454492B9EDED9004B3CB1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954454482B9EDED9004B3CB1 /* Preview Assets.xcassets */; };
 		954454532B9EDED9004B3CB1 /* TakeYourUmbrellaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954454522B9EDED9004B3CB1 /* TakeYourUmbrellaTests.swift */; };
@@ -26,7 +26,8 @@
 		95B727B02BB4328500A88530 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B727AF2BB4328500A88530 /* LocationService.swift */; };
 		95B727B92BB45DAD00A88530 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B727B82BB45DAD00A88530 /* NotificationService.swift */; };
 		95B727BD2BB45DAD00A88530 /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 95B727B62BB45DAD00A88530 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		95CD075C2BB1985B00658BE4 /* GifImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD075B2BB1985B00658BE4 /* GifImageView.swift */; };
+		95B727C32BBFD45A00A88530 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B727C22BBFD45A00A88530 /* NotificationService.swift */; };
+		95B727C52BBFE71400A88530 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B727C42BBFE71400A88530 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +80,7 @@
 		951C596C2BAC2E470085954E /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		9544543E2B9EDED7004B3CB1 /* TakeYourUmbrella.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeYourUmbrella.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		954454412B9EDED7004B3CB1 /* TakeYourUmbrellaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeYourUmbrellaApp.swift; sourceTree = "<group>"; };
-		954454432B9EDED7004B3CB1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		954454432B9EDED7004B3CB1 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		954454452B9EDED9004B3CB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		954454482B9EDED9004B3CB1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9544544E2B9EDED9004B3CB1 /* TakeYourUmbrellaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TakeYourUmbrellaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,7 +94,8 @@
 		95B727B62BB45DAD00A88530 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B727B82BB45DAD00A88530 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		95B727BA2BB45DAD00A88530 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		95CD075B2BB1985B00658BE4 /* GifImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImageView.swift; sourceTree = "<group>"; };
+		95B727C22BBFD45A00A88530 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		95B727C42BBFE71400A88530 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 		954454402B9EDED7004B3CB1 /* TakeYourUmbrella */ = {
 			isa = PBXGroup;
 			children = (
+				95B727C62BC013ED00A88530 /* Services */,
 				95B727B12BB45D6C00A88530 /* TakeYourUmbrella.entitlements */,
 				9510DB0D2BAC8140006930F8 /* Info.plist */,
 				9510DB042BAC7E1A006930F8 /* Fonts */,
@@ -181,8 +184,7 @@
 				9544546B2B9EDF2D004B3CB1 /* Models */,
 				954454452B9EDED9004B3CB1 /* Assets.xcassets */,
 				954454472B9EDED9004B3CB1 /* Preview Content */,
-				9506C8AC2BAAD48B00A2DB3B /* WeatherService.swift */,
-				95B727AF2BB4328500A88530 /* LocationService.swift */,
+				95B727C42BBFE71400A88530 /* AppDelegate.swift */,
 			);
 			path = TakeYourUmbrella;
 			sourceTree = "<group>";
@@ -224,8 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				951C59692BAC0D960085954E /* Models */,
-				954454432B9EDED7004B3CB1 /* ContentView.swift */,
-				95CD075B2BB1985B00658BE4 /* GifImageView.swift */,
+				954454432B9EDED7004B3CB1 /* WeatherView.swift */,
 				95AE7FE32BB2D5C500093D50 /* LocationSearchView.swift */,
 			);
 			path = Views;
@@ -246,6 +247,16 @@
 				95B727BA2BB45DAD00A88530 /* Info.plist */,
 			);
 			path = OneSignalNotificationServiceExtension;
+			sourceTree = "<group>";
+		};
+		95B727C62BC013ED00A88530 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9506C8AC2BAAD48B00A2DB3B /* WeatherService.swift */,
+				95B727C22BBFD45A00A88530 /* NotificationService.swift */,
+				95B727AF2BB4328500A88530 /* LocationService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,13 +424,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9506C8AD2BAAD48B00A2DB3B /* WeatherService.swift in Sources */,
-				954454442B9EDED7004B3CB1 /* ContentView.swift in Sources */,
+				954454442B9EDED7004B3CB1 /* WeatherView.swift in Sources */,
 				951C596D2BAC2E470085954E /* ContentViewModel.swift in Sources */,
 				9506C8AB2BAACAF600A2DB3B /* Weather.swift in Sources */,
-				95CD075C2BB1985B00658BE4 /* GifImageView.swift in Sources */,
 				95AE7FE42BB2D5C500093D50 /* LocationSearchView.swift in Sources */,
 				954454422B9EDED7004B3CB1 /* TakeYourUmbrellaApp.swift in Sources */,
 				95B727B02BB4328500A88530 /* LocationService.swift in Sources */,
+				95B727C32BBFD45A00A88530 /* NotificationService.swift in Sources */,
+				95B727C52BBFE71400A88530 /* AppDelegate.swift in Sources */,
 				951C596B2BAC0DAC0085954E /* WeatherData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
