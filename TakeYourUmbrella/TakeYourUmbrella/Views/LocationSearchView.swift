@@ -9,11 +9,16 @@ import SwiftUI
 
 struct LocationSearchView: View {
     
+    @StateObject var locationService = LocationViewModel()
+    
     @State private var location: String = ""
+    @State private var timer: Timer?
+    @State var selectedLocation: String?
+    
+    var onChooseLocation: (_ location: LocationData) -> Void
+    @Binding var receivedText: String
     
     @Environment(\.presentationMode) var presentationMode
-    
-    private var cities = ["Amstelveen", "Amsterdam", "Amsterdam-Zuidoost", "Amstetten"]
     
     var body: some View {
         VStack(spacing: 12) {
@@ -23,8 +28,16 @@ struct LocationSearchView: View {
                     .foregroundColor(Color.gray)
                     .padding(.leading)
                 TextField("Location", text: $location)
+                    .onChange(of: location) { newValue in
+                        self.timer?.invalidate()
+                        self.timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { _ in
+                            locationService.loadData(city: newValue)
+                            locationService.location = []
+                        }
+                    }
                 if !location.isEmpty {
                     Button { location = ""
+                        locationService.location = []
                     } label: {
                         Image(systemName: "multiply.circle.fill")
                             .foregroundColor(Color.gray)
@@ -37,8 +50,27 @@ struct LocationSearchView: View {
                 .stroke(Color("ButtonCircle"), lineWidth: 4))
             .background(.white)
             .cornerRadius(20)
+            if !location.isEmpty  {
+                ScrollView {
+                    VStack {
+                        ForEach(locationService.location, id: \.id) { location in
+                            Text("\(location.city), \(location.region), \(location.country)")
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.all,4)
+                                .lineLimit(1)
+                                .onTapGesture(count: 1) {
+                                    self.selectedLocation = "\(location)"
+                                    self.onChooseLocation(location)
+                                    self.presentationMode.wrappedValue.dismiss()
+                                }
+                            Divider()
+                        }
+                    }
+                }
+            }
             Spacer()
             Button("Back") {
+                self.receivedText = selectedLocation ?? ""
                 self.presentationMode.wrappedValue.dismiss()
             }
             .foregroundColor(Color("Text"))
@@ -48,22 +80,15 @@ struct LocationSearchView: View {
             .overlay(RoundedRectangle(cornerRadius: 30)
                 .stroke(Color("ButtonCircle"), lineWidth: 4))
             .cornerRadius(30)
-            //            List(cities, id: \.self) { city in
-            //                ZStack {
-            //                    Text(city)
-            //                }
-            //                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-            //            }
         }
         .padding(.all)
         .background(Color("Background"))
         .font(.custom("PalanquinDark-Regular", size: 17))
-        
     }
 }
 
 struct LocationSearchView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationSearchView()
+        LocationSearchView(onChooseLocation: {city in}, receivedText: .constant("123"))
     }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 
 struct WeatherData {
     let city: String
+    let region: String
     let country: String
     let temperature: Int
     let humidity: Int
@@ -47,6 +48,7 @@ struct WeatherData {
 extension WeatherData {
     init(weather: Weather) {
         self = .init(city: weather.location.name,
+                     region: weather.location.region,
                      country: weather.location.country,
                      temperature: weather.current.tempC,
                      humidity: weather.current.humidity,

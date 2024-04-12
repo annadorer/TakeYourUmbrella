@@ -28,7 +28,7 @@ struct Notifications {
         let content = UNMutableNotificationContent()
         
         content.title = "Take your umbrella!"
-        content.body = "Ожидаются осадки. Не забудьте взять зонтик с собой."
+        content.body = "Precipitations are expected. Don't forget to take an umbrella with you."
         
         // Проверка количества осадков
         let isRaining = dailyChanceOfRain >= 40

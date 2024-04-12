@@ -7,10 +7,11 @@
 
 import SwiftUI
 import UserNotifications
+//import Combine
 
 struct WeatherView: View {
     
-    @StateObject var viewModel = ContentViewModel()
+    @StateObject var viewModel = WeatherViewModel()
     @State var showingLocationSearchView = false
     
     private let currentDate = Date()
@@ -34,7 +35,7 @@ struct WeatherView: View {
                 }
             }
             
-            HStack(alignment: .center, spacing: 25) {
+            HStack(alignment: .center, spacing: 40) {
                 imageView(imageName: "\(viewModel.weather?.condition.image ?? "default")", width: 180, height: 180, color: "Form", cornerRadius: 110)
                     .shadow(radius: 15)
                 VStack(alignment: .center, spacing: -30) {
@@ -42,18 +43,18 @@ struct WeatherView: View {
                     textView(text: "\(viewModel.weather?.condition ?? WeatherData.WeatherCondition.sunny)", size: 28)
                 }
             }
-            .padding(.top, -10)
+            .padding(.top, 10)
             HStack {
                 Spacer()
-                combineTexts(text1: "Wind", text2: "\(viewModel.weather?.windSpeed ?? 0) mp/h")
-                Divider()
-                    .overlay(.black)
-                    .frame(width: 15, height: 50)
                 combineTexts(text1: "Humidity", text2: "\(viewModel.weather?.humidity ?? 0)%")
                 Divider()
                     .overlay(.black)
                     .frame(width: 15, height: 50)
                 combineTexts(text1: "Cloud", text2: "\(viewModel.weather?.cloudness ?? 0)%")
+                Divider()
+                    .overlay(.black)
+                    .frame(width: 15, height: 50)
+                combineTexts(text1: "Wind", text2: "\(viewModel.weather?.windSpeed ?? 0) mp/h")
                 Spacer()
             }
             .background(Color("Form"))
@@ -65,6 +66,7 @@ struct WeatherView: View {
                 Text("Precipitation amount: \(viewModel.weather?.precipitation ?? 0)")
                     .font(.custom("PalanquinDark-Regular", size: 22))
             }
+            .padding(.bottom, 10)
             HStack {
                 VStack(alignment: .leading, spacing: 0) {
                     combineTexts(text1: "Chance of rain", text2: "\(viewModel.weather?.dailyChanceOfRain ?? 0)%")
@@ -81,6 +83,7 @@ struct WeatherView: View {
                 .background(Color("Form"))
                 .cornerRadius(50)
                 .shadow(radius: 15)
+                .padding(.all,10)
             Spacer()
             HStack {
                 Rectangle()
@@ -91,7 +94,9 @@ struct WeatherView: View {
                 }) {
                     imageView(imageName: "location", width: 58, height: 58, color: "Button", cornerRadius: 30)
                 } .sheet(isPresented: $showingLocationSearchView) {
-                    LocationSearchView()
+                    LocationSearchView(onChooseLocation: {location in
+                        viewModel.fetchWeather(weatherSearchParameters: WeatherSerachParameters(city: location.city, country: location.country))
+                    }, receivedText: $viewModel.chooseLocation)
                 }
                 Rectangle()
                     .frame(height: 2.5)
@@ -101,7 +106,7 @@ struct WeatherView: View {
         .padding(.all)
         .background(Color("Background"))
         .onAppear {
-            viewModel.onAppear()
+            viewModel.fetchWeather(weatherSearchParameters: WeatherSerachParameters(city: "Moscow", country: "Russia"))
         }
     }
     
@@ -134,6 +139,7 @@ struct WeatherView: View {
             .cornerRadius(cornerRadius)
     }
 }
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         WeatherView()
