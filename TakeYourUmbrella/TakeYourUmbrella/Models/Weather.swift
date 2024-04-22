@@ -16,13 +16,6 @@ struct Weather: Decodable {
         let name: String
         let region: String
         let country: String
-        
-//        enum CodingKeys: String, CodingKey {
-//            case name = "name"
-//            case region = "region"
-//            case country = "country"
-//            //case id
-//        }
     }
     
     struct Condition: Decodable {
@@ -62,4 +55,5 @@ struct Weather: Decodable {
             case dailyChanceOfRain = "daily_chance_of_rain"
         }
     }
+    
 }

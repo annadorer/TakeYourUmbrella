@@ -8,7 +8,7 @@
 import Foundation
 import UserNotifications
 
-class WeatherViewModel: ObservableObject {
+final class WeatherViewModel: ObservableObject {
     
     @Published var weather: WeatherData? = nil
     @Published var chooseLocation: String = ""
@@ -24,4 +24,5 @@ class WeatherViewModel: ObservableObject {
             }
         }
     }
+    
 }

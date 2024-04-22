@@ -3,4 +3,211 @@
    uuid = "E4B4F386-332A-489D-A41C-FCEA480D446D"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8B8BAA4A-4ADE-42F7-928E-FACD3FA32F9E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TakeYourUmbrella/Services/LocationService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "searchLocation(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "12189CFD-8823-4CA8-95AF-609224AB673D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TakeYourUmbrella/Services/LocationService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "searchLocation(for:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "12189CFD-8823-4CA8-95AF-609224AB673D - c59435e30b99fc41"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for TakeYourUmbrella.LocationService.searchLocation(for: Swift.String) async throws -&gt; Swift.Array&lt;TakeYourUmbrella.LocationData&gt;"
+                  moduleName = "TakeYourUmbrella"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anna/Documents/GitHub/TakeYourUmbrella/TakeYourUmbrella/TakeYourUmbrella/Services/LocationService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "718">
+               </Location>
+               <Location
+                  uuid = "12189CFD-8823-4CA8-95AF-609224AB673D - 370e8a83e5ef1fdd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for TakeYourUmbrella.LocationService.searchLocation(for: Swift.String) async throws -&gt; Swift.Array&lt;TakeYourUmbrella.LocationData&gt;"
+                  moduleName = "TakeYourUmbrella"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anna/Documents/GitHub/TakeYourUmbrella/TakeYourUmbrella/TakeYourUmbrella/Services/LocationService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "12189CFD-8823-4CA8-95AF-609224AB673D - 94fcb452ac983003"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for TakeYourUmbrella.LocationService.searchLocation(for: Swift.String) async throws -&gt; Swift.Array&lt;TakeYourUmbrella.LocationData&gt;"
+                  moduleName = "TakeYourUmbrella"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anna/Documents/GitHub/TakeYourUmbrella/TakeYourUmbrella/TakeYourUmbrella/Services/LocationService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "12189CFD-8823-4CA8-95AF-609224AB673D - f3b0f49d1c1f52e2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for TakeYourUmbrella.LocationService.searchLocation(for: Swift.String) async throws -&gt; Swift.Array&lt;TakeYourUmbrella.LocationData&gt;"
+                  moduleName = "TakeYourUmbrella"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anna/Documents/GitHub/TakeYourUmbrella/TakeYourUmbrella/TakeYourUmbrella/Services/LocationService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "53">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "40150DEE-2058-48B0-BC95-F126D50F6D33"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TakeYourUmbrella/Services/LocationService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "searchLocation(for:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "40150DEE-2058-48B0-BC95-F126D50F6D33 - c59435e30b9983a0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for TakeYourUmbrella.LocationService.searchLocation(for: Swift.String) async throws -&gt; Swift.Array&lt;TakeYourUmbrella.LocationData&gt;"
+                  moduleName = "TakeYourUmbrella"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anna/Documents/GitHub/TakeYourUmbrella/TakeYourUmbrella/TakeYourUmbrella/Services/LocationService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "217">
+               </Location>
+               <Location
+                  uuid = "40150DEE-2058-48B0-BC95-F126D50F6D33 - c59435e30b9983a0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for TakeYourUmbrella.LocationService.searchLocation(for: Swift.String) async throws -&gt; Swift.Array&lt;TakeYourUmbrella.LocationData&gt;"
+                  moduleName = "TakeYourUmbrella"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anna/Documents/GitHub/TakeYourUmbrella/TakeYourUmbrella/TakeYourUmbrella/Services/LocationService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "712">
+               </Location>
+               <Location
+                  uuid = "40150DEE-2058-48B0-BC95-F126D50F6D33 - c59435e30b9983a0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for TakeYourUmbrella.LocationService.searchLocation(for: Swift.String) async throws -&gt; Swift.Array&lt;TakeYourUmbrella.LocationData&gt;"
+                  moduleName = "TakeYourUmbrella"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anna/Documents/GitHub/TakeYourUmbrella/TakeYourUmbrella/TakeYourUmbrella/Services/LocationService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "919">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E173935A-97C1-4BA7-8D8A-5A4C2059C681"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TakeYourUmbrella/Services/LocationService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "searchLocation(for:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E173935A-97C1-4BA7-8D8A-5A4C2059C681 - 94fcb452ac983041"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for TakeYourUmbrella.LocationService.searchLocation(for: Swift.String) async throws -&gt; Swift.Array&lt;TakeYourUmbrella.LocationData&gt;"
+                  moduleName = "TakeYourUmbrella"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anna/Documents/GitHub/TakeYourUmbrella/TakeYourUmbrella/TakeYourUmbrella/Services/LocationService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "472">
+               </Location>
+               <Location
+                  uuid = "E173935A-97C1-4BA7-8D8A-5A4C2059C681 - 8955c19bf013f01b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (TakeYourUmbrella.Weather.Location) -&gt; TakeYourUmbrella.LocationData in TakeYourUmbrella.LocationService.searchLocation(for: Swift.String) async throws -&gt; Swift.Array&lt;TakeYourUmbrella.LocationData&gt;"
+                  moduleName = "TakeYourUmbrella"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anna/Documents/GitHub/TakeYourUmbrella/TakeYourUmbrella/TakeYourUmbrella/Services/LocationService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "47">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -16,6 +16,7 @@ struct LocationSearchView: View {
     @State var selectedLocation: String?
     
     var onChooseLocation: (_ location: LocationData) -> Void
+    
     @Binding var receivedText: String
     
     @Environment(\.presentationMode) var presentationMode
@@ -31,7 +32,7 @@ struct LocationSearchView: View {
                     .onChange(of: location) { newValue in
                         self.timer?.invalidate()
                         self.timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { _ in
-                            locationService.loadData(city: newValue)
+                            locationService.loadData(for: newValue)
                             locationService.location = []
                         }
                     }
@@ -50,21 +51,24 @@ struct LocationSearchView: View {
                 .stroke(Color("ButtonCircle"), lineWidth: 4))
             .background(.white)
             .cornerRadius(20)
-            if !location.isEmpty  {
+            if !location.isEmpty {
                 ScrollView {
                     VStack {
-                        ForEach(locationService.location, id: \.id) { location in
-                            Text("\(location.city), \(location.region), \(location.country)")
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .padding(.all,4)
-                                .lineLimit(1)
-                                .onTapGesture(count: 1) {
-                                    self.selectedLocation = "\(location)"
-                                    self.onChooseLocation(location)
-                                    self.presentationMode.wrappedValue.dismiss()
+                        if locationService.location.isEmpty {
+                            Text("Nothing found") } else {
+                                ForEach(locationService.location, id: \.id) { location in
+                                    Text("\(location.city), \(location.region), \(location.country)")
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .padding(.all,4)
+                                        .lineLimit(1)
+                                        .onTapGesture(count: 1) {
+                                            self.selectedLocation = "\(location)"
+                                            self.onChooseLocation(location)
+                                            self.presentationMode.wrappedValue.dismiss()
+                                        }
+                                    Divider()
                                 }
-                            Divider()
-                        }
+                            }
                     }
                 }
             }
@@ -82,13 +86,14 @@ struct LocationSearchView: View {
             .cornerRadius(30)
         }
         .padding(.all)
-        .background(Color("Background"))
+        .background(Color("ThirdBackground"))
         .font(.custom("PalanquinDark-Regular", size: 17))
     }
+
 }
 
 struct LocationSearchView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationSearchView(onChooseLocation: {city in}, receivedText: .constant("123"))
+        LocationSearchView(onChooseLocation: {city in}, receivedText: .constant(""))
     }
 }

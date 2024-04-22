@@ -7,13 +7,13 @@
 
 import Foundation
 
-class LocationViewModel: ObservableObject {
+final class LocationViewModel: ObservableObject {
     
     @Published var location: [LocationData] = []
     @Published var dataIsEmpty: Bool = false
     private let locationService = LocationService()
     
-    @MainActor func loadData(city: String) {
+    @MainActor func loadData(for city: String) {
         Task {
             let location = try? await locationService.searchLocation(for: city)
             if location != nil {
@@ -24,4 +24,5 @@ class LocationViewModel: ObservableObject {
             }
         }
     }
+    
 }

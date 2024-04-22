@@ -10,10 +10,6 @@ import UserNotifications
 
 struct Notifications {
     func requestNotificationAuthorization(dailyChanceOfRain: Int) {
-        // Запрос на разрешение отправки уведомлений
- 
-        //    scheduleRainNotification(dailyChanceOfRain: Int)
-      //  }
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { granted, error in
                 if granted {
                     print("Permission granted")
@@ -30,11 +26,11 @@ struct Notifications {
         content.title = "Take your umbrella!"
         content.body = "Precipitations are expected. Don't forget to take an umbrella with you."
         
-        // Проверка количества осадков
         let isRaining = dailyChanceOfRain >= 40
         
         if isRaining {
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false) // Уведомление через 5 секунд
+            
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
             let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
             
             UNUserNotificationCenter.current().add(request) { error in
@@ -42,4 +38,5 @@ struct Notifications {
             }
         }
     }
+    
 }

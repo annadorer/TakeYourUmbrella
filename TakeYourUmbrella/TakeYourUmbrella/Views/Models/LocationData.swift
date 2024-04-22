@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LocationData: Identifiable {
+struct LocationData: Identifiable, Codable {
     var id =  UUID()
     let city: String
     let region: String
@@ -20,4 +20,5 @@ extension LocationData {
                      region: weather.region,
                      country: weather.country)
     }
+    
 }

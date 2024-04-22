@@ -19,9 +19,6 @@
 		954454442B9EDED7004B3CB1 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954454432B9EDED7004B3CB1 /* WeatherView.swift */; };
 		954454462B9EDED9004B3CB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954454452B9EDED9004B3CB1 /* Assets.xcassets */; };
 		954454492B9EDED9004B3CB1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954454482B9EDED9004B3CB1 /* Preview Assets.xcassets */; };
-		954454532B9EDED9004B3CB1 /* TakeYourUmbrellaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954454522B9EDED9004B3CB1 /* TakeYourUmbrellaTests.swift */; };
-		9544545D2B9EDED9004B3CB1 /* TakeYourUmbrellaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9544545C2B9EDED9004B3CB1 /* TakeYourUmbrellaUITests.swift */; };
-		9544545F2B9EDED9004B3CB1 /* TakeYourUmbrellaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9544545E2B9EDED9004B3CB1 /* TakeYourUmbrellaUITestsLaunchTests.swift */; };
 		95AE7FE42BB2D5C500093D50 /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AE7FE32BB2D5C500093D50 /* LocationSearchView.swift */; };
 		95B727B02BB4328500A88530 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B727AF2BB4328500A88530 /* LocationService.swift */; };
 		95B727B92BB45DAD00A88530 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B727B82BB45DAD00A88530 /* NotificationService.swift */; };
@@ -31,6 +28,9 @@
 		95B727C82BC51EBF00A88530 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B727C72BC51EBF00A88530 /* LocationViewModel.swift */; };
 		95B727CA2BC6964F00A88530 /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B727C92BC6964E00A88530 /* LocationData.swift */; };
 		95B727CC2BC937F800A88530 /* WeatherSerachParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B727CB2BC937F800A88530 /* WeatherSerachParameters.swift */; };
+		95B727CE2BC99D9E00A88530 /* SaveUserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B727CD2BC99D9E00A88530 /* SaveUserDataService.swift */; };
+		95B727D72BCE6B9100A88530 /* TakeYourUmbrellaTests in Resources */ = {isa = PBXBuildFile; fileRef = 95B727D62BCE6B9100A88530 /* TakeYourUmbrellaTests */; };
+		95B727D92BCE6BA000A88530 /* TakeYourUmbrellaUITests in Resources */ = {isa = PBXBuildFile; fileRef = 95B727D82BCE6BA000A88530 /* TakeYourUmbrellaUITests */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,13 +87,9 @@
 		954454452B9EDED9004B3CB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		954454482B9EDED9004B3CB1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9544544E2B9EDED9004B3CB1 /* TakeYourUmbrellaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TakeYourUmbrellaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		954454522B9EDED9004B3CB1 /* TakeYourUmbrellaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeYourUmbrellaTests.swift; sourceTree = "<group>"; };
 		954454582B9EDED9004B3CB1 /* TakeYourUmbrellaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TakeYourUmbrellaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9544545C2B9EDED9004B3CB1 /* TakeYourUmbrellaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeYourUmbrellaUITests.swift; sourceTree = "<group>"; };
-		9544545E2B9EDED9004B3CB1 /* TakeYourUmbrellaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeYourUmbrellaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		95AE7FE32BB2D5C500093D50 /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
 		95B727AF2BB4328500A88530 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
-		95B727B12BB45D6C00A88530 /* TakeYourUmbrella.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TakeYourUmbrella.entitlements; sourceTree = "<group>"; };
 		95B727B62BB45DAD00A88530 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B727B82BB45DAD00A88530 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		95B727BA2BB45DAD00A88530 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,6 +98,10 @@
 		95B727C72BC51EBF00A88530 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		95B727C92BC6964E00A88530 /* LocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
 		95B727CB2BC937F800A88530 /* WeatherSerachParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherSerachParameters.swift; sourceTree = "<group>"; };
+		95B727CD2BC99D9E00A88530 /* SaveUserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUserDataService.swift; sourceTree = "<group>"; };
+		95B727D52BCE6B0A00A88530 /* TakeYourUmbrella.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TakeYourUmbrella.entitlements; sourceTree = "<group>"; };
+		95B727D62BCE6B9100A88530 /* TakeYourUmbrellaTests */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TakeYourUmbrellaTests; path = ../../../../../.Trash/TakeYourUmbrellaTests; sourceTree = "<group>"; };
+		95B727D82BCE6BA000A88530 /* TakeYourUmbrellaUITests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TakeYourUmbrellaUITests; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,8 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				954454402B9EDED7004B3CB1 /* TakeYourUmbrella */,
-				954454512B9EDED9004B3CB1 /* TakeYourUmbrellaTests */,
-				9544545B2B9EDED9004B3CB1 /* TakeYourUmbrellaUITests */,
 				95B727B72BB45DAD00A88530 /* OneSignalNotificationServiceExtension */,
 				9544543F2B9EDED7004B3CB1 /* Products */,
 			);
@@ -182,8 +180,10 @@
 		954454402B9EDED7004B3CB1 /* TakeYourUmbrella */ = {
 			isa = PBXGroup;
 			children = (
+				95B727D52BCE6B0A00A88530 /* TakeYourUmbrella.entitlements */,
+				95B727D82BCE6BA000A88530 /* TakeYourUmbrellaUITests */,
+				95B727D62BCE6B9100A88530 /* TakeYourUmbrellaTests */,
 				95B727C62BC013ED00A88530 /* Services */,
-				95B727B12BB45D6C00A88530 /* TakeYourUmbrella.entitlements */,
 				9510DB0D2BAC8140006930F8 /* Info.plist */,
 				9510DB042BAC7E1A006930F8 /* Fonts */,
 				954454412B9EDED7004B3CB1 /* TakeYourUmbrellaApp.swift */,
@@ -203,23 +203,6 @@
 				954454482B9EDED9004B3CB1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		954454512B9EDED9004B3CB1 /* TakeYourUmbrellaTests */ = {
-			isa = PBXGroup;
-			children = (
-				954454522B9EDED9004B3CB1 /* TakeYourUmbrellaTests.swift */,
-			);
-			path = TakeYourUmbrellaTests;
-			sourceTree = "<group>";
-		};
-		9544545B2B9EDED9004B3CB1 /* TakeYourUmbrellaUITests */ = {
-			isa = PBXGroup;
-			children = (
-				9544545C2B9EDED9004B3CB1 /* TakeYourUmbrellaUITests.swift */,
-				9544545E2B9EDED9004B3CB1 /* TakeYourUmbrellaUITestsLaunchTests.swift */,
-			);
-			path = TakeYourUmbrellaUITests;
 			sourceTree = "<group>";
 		};
 		9544546B2B9EDF2D004B3CB1 /* Models */ = {
@@ -264,6 +247,7 @@
 				9506C8AC2BAAD48B00A2DB3B /* WeatherService.swift */,
 				95B727C22BBFD45A00A88530 /* NotificationService.swift */,
 				95B727AF2BB4328500A88530 /* LocationService.swift */,
+				95B727CD2BC99D9E00A88530 /* SaveUserDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -395,10 +379,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95B727D72BCE6B9100A88530 /* TakeYourUmbrellaTests in Resources */,
 				9510DB092BAC7E47006930F8 /* PalanquinDark-Bold.ttf in Resources */,
 				9510DB0C2BAC7E48006930F8 /* PalanquinDark-Regular.ttf in Resources */,
 				9510DB0A2BAC7E47006930F8 /* PalanquinDark-SemiBold.ttf in Resources */,
 				954454492B9EDED9004B3CB1 /* Preview Assets.xcassets in Resources */,
+				95B727D92BCE6BA000A88530 /* TakeYourUmbrellaUITests in Resources */,
 				9510DB0B2BAC7E48006930F8 /* PalanquinDark-Medium.ttf in Resources */,
 				954454462B9EDED9004B3CB1 /* Assets.xcassets in Resources */,
 			);
@@ -438,6 +424,7 @@
 				951C596D2BAC2E470085954E /* WeatherViewModel.swift in Sources */,
 				9506C8AB2BAACAF600A2DB3B /* Weather.swift in Sources */,
 				95AE7FE42BB2D5C500093D50 /* LocationSearchView.swift in Sources */,
+				95B727CE2BC99D9E00A88530 /* SaveUserDataService.swift in Sources */,
 				95B727C82BC51EBF00A88530 /* LocationViewModel.swift in Sources */,
 				954454422B9EDED7004B3CB1 /* TakeYourUmbrellaApp.swift in Sources */,
 				95B727CC2BC937F800A88530 /* WeatherSerachParameters.swift in Sources */,
@@ -452,7 +439,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				954454532B9EDED9004B3CB1 /* TakeYourUmbrellaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,8 +446,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9544545F2B9EDED9004B3CB1 /* TakeYourUmbrellaUITestsLaunchTests.swift in Sources */,
-				9544545D2B9EDED9004B3CB1 /* TakeYourUmbrellaUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
