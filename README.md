@@ -12,4 +12,4 @@
 * возможность пользователем получать уведомление о грядущих осадков.
 
 ## Скриншоты
-//![Algorithm schema](./Screenshots.png)
+![Algorithm schema](./Screenshots.png)
